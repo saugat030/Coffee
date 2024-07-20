@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body class="relative h-screen w-screen bg-[#FDFCFA] font-Poppins">
+    <header class="sticky w-full">
+      <nav class="h-20 bg-[#c67c4e] flex items-center justify-between">
+        <div>
+          <img
+            class="w-20 inline"
+            src="https://static.vecteezy.com/system/resources/previews/027/927/578/original/coffee-logo-ai-generative-free-png.png"
+          />
+          <h1 class="hidden md:inline text-2xl font-bold">Kum Coffee</h1>
+        </div>
+        <ul class="flex gap-3 text-xl mr-5 p-1">
+          <li
+            class="m-2 p-2 rounded-md text-white font-extrabold hover:bg-[#edd6c8] hover:text-black hover:cursor-pointer"
+          >
+            <a href="index.html"> Home </a>
+          </li>
+          <li
+            class="m-2 p-2 rounded-md text-white font-extrabold hover:bg-[#edd6c8] hover:text-black hover:cursor-pointer"
+          >
+            Services
+          </li>
+          <li
+            class="m-2 p-2 rounded-md text-white font-extrabold hover:bg-[#edd6c8] hover:text-black hover:cursor-pointer"
+          >
+            About
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- navbar end here -->
+    <div class="flex-col container bg-[#FDFCFA] mx-auto gap-4 mt-2">
+      <!-- this is just the main container whose flex is col    -->
+      <button
+        class="w-28 text-xl text-amber-950 border-2 border-amber-950 p-2 my-4 rounded-md hover:bg-[#6F4E37] hover:text-white"
+      >
+        Drinks<i class="ri-arrow-down-wide-line ml-2"></i>
+      </button>
+      <!-- different products seperator -->
+      <div
+        class="w-full p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-md"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- yo div chai tyo sano img ra button ko lai matrai -->
+            <img
+              class="w-32 rounded-lg"
+              src="https://www.fertilityfamily.co.uk/wp-content/uploads/2023/10/PCOS-and-coffee-scaled-1.jpg"
+            />
+            <button
+              class="rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border border-amber-900 p-2 w-28"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <div class="ml-3 text-xl text-yellow-600 mb-4">
+              <i class="ri-star-fill mr-2"></i>4.5
+            </div>
+            <div class="ml-5 text-2xl text-black">
+              <h1>$21</h1>
+            </div>
+          </div>
+        </div>
+        <!-- counter ko code -->
+        <form class="max-w-xs mx-auto">
+          <label
+            for="quantity-input"
+            class="block mb-2 text-sm font-bold text-slate-800 ml-2"
+            >Choose quantity:</label
+          >
+          <div class="relative flex items-center max-w-[8rem]">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="quantity-input"
+              data-input-counter
+              aria-describedby="helper-text-explanation"
+              class="bg-[#5a30146b] border-x-0 border-gray-300 h-11 text-center text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- counter button ends here -->
+        <h1 class="m-2 p-2 font-bold text-3xl text-red-950 w-48">
+          Caffè latte
+        </h1>
+      </div>
+      <!-- different products seperator -->
+      <div
+        class="w-full p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-md"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- yo div chai tyo sano img ra button ko lai matrai -->
+            <img
+              class="w-32 rounded-lg"
+              src="https://www.helenacoffee.vn/wp-content/uploads/2022/07/Best-Black-Coffee-To-Drink-1.jpg"
+            />
+            <button
+              class="rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border border-amber-900 p-2 w-28"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <div class="ml-3 text-xl text-yellow-600 mb-4">
+              <i class="ri-star-fill mr-2"></i>4.5
+            </div>
+            <div class="ml-5 text-2xl text-black">
+              <h1>$10</h1>
+            </div>
+          </div>
+        </div>
+        <!-- counter ko code -->
+        <form class="max-w-xs mx-auto">
+          <label
+            for="quantity-input"
+            class="block mb-2 text-sm font-bold text-slate-800 ml-2"
+            >Choose quantity:</label
+          >
+          <div class="relative flex items-center max-w-[8rem]">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="quantity-input"
+              data-input-counter
+              aria-describedby="helper-text-explanation"
+              class="bg-[#5a30146b] border-x-0 border-gray-300 h-11 text-center text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- counter button ends here -->
+        <h1 class="m-2 p-2 font-bold text-3xl text-red-950 w-48">Americano</h1>
+      </div>
+      <!-- different products seperator -->
+      <div
+        class="w-full p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-md"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- yo div chai tyo sano img ra button ko lai matrai -->
+            <img
+              class="w-32 h-24 rounded-lg"
+              src="https://recettes.vedrenne.fr/1269-medium_default/gingerbread-cappuccino.jpg"
+            />
+            <button
+              class="rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border border-amber-900 p-2 w-28"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <div class="ml-3 text-xl text-yellow-600 mb-4">
+              <i class="ri-star-fill mr-2"></i>4.5
+            </div>
+            <div class="ml-5 text-2xl text-black">
+              <h1>$30</h1>
+            </div>
+          </div>
+        </div>
+        <!-- counter ko code -->
+        <form class="max-w-xs mx-auto">
+          <label
+            for="quantity-input"
+            class="block mb-2 text-sm font-bold text-slate-800 ml-2"
+            >Choose quantity:</label
+          >
+          <div class="relative flex items-center max-w-[8rem]">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="quantity-input"
+              data-input-counter
+              aria-describedby="helper-text-explanation"
+              class="bg-[#5a30146b] border-x-0 border-gray-300 h-11 text-center text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- counter button ends here -->
+        <h1 class="m-2 p-2 font-bold text-3xl text-red-950 w-48">Cappuccino</h1>
+      </div>
+      <!-- different products seperator -->
+      <div
+        class="w-full p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-md"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- yo div chai tyo sano img ra button ko lai matrai -->
+            <img
+              class="w-32 rounded-lg"
+              src="https://cdn.shopify.com/s/files/1/0838/4525/files/what_is_long_black_coffee_1024x1024.jpg?v=1648542549"
+            />
+            <button
+              class="rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border border-amber-900 p-2 w-28"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <div class="ml-3 text-xl text-yellow-600 mb-4">
+              <i class="ri-star-fill mr-2"></i>4.5
+            </div>
+            <div class="ml-5 text-2xl text-black">
+              <h1>$8</h1>
+            </div>
+          </div>
+        </div>
+        <!-- counter ko code -->
+        <form class="max-w-xs mx-auto">
+          <label
+            for="quantity-input"
+            class="block mb-2 text-sm font-bold text-slate-800 ml-2"
+            >Choose quantity:</label
+          >
+          <div class="relative flex items-center max-w-[8rem]">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="quantity-input"
+              data-input-counter
+              aria-describedby="helper-text-explanation"
+              class="bg-[#5a30146b] border-x-0 border-gray-300 h-11 text-center text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- counter button ends here -->
+        <h1 class="m-2 p-2 font-bold text-3xl text-red-950 w-48">Espresso</h1>
+      </div>
+      <!-- different products seperator -->
+      <div
+        class="w-full p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-md"
+      >
+        <div class="flex items-center gap-3">
+          <div class="flex flex-col gap-4 items-center">
+            <!-- yo div chai tyo sano img ra button ko lai matrai -->
+            <img
+              class="w-32 h-24 rounded-lg"
+              src="https://www.eatingwell.com/thmb/qtP5zJfjZjS_6lkAGjOoH2XDNEc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mineral-water-8cc11cec12c7471bac9378fa9757c83f.jpg"
+            />
+            <button
+              class="rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border border-amber-900 p-2 w-28"
+            >
+              Buy Now
+            </button>
+          </div>
+          <div>
+            <div class="ml-3 text-xl text-yellow-600 mb-4">
+              <i class="ri-star-fill mr-2"></i>4.5
+            </div>
+            <div class="ml-5 text-2xl text-black">
+              <h1>$21</h1>
+            </div>
+          </div>
+        </div>
+        <!-- counter ko code -->
+        <form class="max-w-xs mx-auto">
+          <label
+            for="quantity-input"
+            class="block mb-2 text-sm font-bold text-slate-800 ml-2"
+            >Choose quantity:</label
+          >
+          <div class="relative flex items-center max-w-[8rem]">
+            <button
+              type="button"
+              id="decrement-button"
+              data-input-counter-decrement="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-s-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 2"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M1 1h16"
+                />
+              </svg>
+            </button>
+            <input
+              type="text"
+              id="quantity-input"
+              data-input-counter
+              aria-describedby="helper-text-explanation"
+              class="bg-[#5a30146b] border-x-0 border-gray-300 h-11 text-center text-black text-sm focus:ring-blue-500 focus:border-blue-500 block w-full py-2.5"
+              required
+            />
+            <button
+              type="button"
+              id="increment-button"
+              data-input-counter-increment="quantity-input"
+              class="bg-[#FDFCFA] hover:bg-gray-200 border border-gray-300 rounded-e-lg p-3 h-11 focus:ring-gray-100 focus:ring-2 focus:outline-none"
+            >
+              <svg
+                class="w-3 h-3 text-gray-900"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 18 18"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 1v16M1 9h16"
+                />
+              </svg>
+            </button>
+          </div>
+        </form>
+        <!-- counter button ends here -->
+        <h1 class="m-2 p-2 font-bold text-3xl text-red-950 w-48">Water</h1>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
