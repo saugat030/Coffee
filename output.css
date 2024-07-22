@@ -598,6 +598,10 @@ video {
   position: static;
 }
 
+.absolute{
+  position: absolute;
+}
+
 .relative{
   position: relative;
 }
@@ -606,8 +610,80 @@ video {
   position: sticky;
 }
 
+.top-4{
+  top: 1rem;
+}
+
+.top-5{
+  top: 1.25rem;
+}
+
+.top-10{
+  top: 2.5rem;
+}
+
+.right-3{
+  right: 0.75rem;
+}
+
+.right-2{
+  right: 0.5rem;
+}
+
+.right-1{
+  right: 0.25rem;
+}
+
+.right-\[25\%\]{
+  right: 25%;
+}
+
+.right-\[10\%\]{
+  right: 10%;
+}
+
+.right-\[5\%\]{
+  right: 5%;
+}
+
+.right-\[1\%\]{
+  right: 1%;
+}
+
+.right-\[2\%\]{
+  right: 2%;
+}
+
+.right-\[1\.5\%\]{
+  right: 1.5%;
+}
+
+.right-5{
+  right: 1.25rem;
+}
+
+.right-\[5px\]{
+  right: 5px;
+}
+
+.right-\[1px\]{
+  right: 1px;
+}
+
+.right-\[2px\]{
+  right: 2px;
+}
+
+.right-\[10px\]{
+  right: 10px;
+}
+
 .m-2{
   margin: 0.5rem;
+}
+
+.m-1{
+  margin: 0.25rem;
 }
 
 .mx-auto{
@@ -677,6 +753,14 @@ video {
   margin-top: 0.5rem;
 }
 
+.ml-1{
+  margin-left: 0.25rem;
+}
+
+.mr-3{
+  margin-right: 0.75rem;
+}
+
 .block{
   display: block;
 }
@@ -687,6 +771,10 @@ video {
 
 .flex{
   display: flex;
+}
+
+.hidden{
+  display: none;
 }
 
 .h-11{
@@ -735,6 +823,10 @@ video {
 
 .h-16{
   height: 4rem;
+}
+
+.h-12{
+  height: 3rem;
 }
 
 .w-20{
@@ -789,6 +881,10 @@ video {
   width: 1.25rem;
 }
 
+.w-12{
+  width: 3rem;
+}
+
 .max-w-\[7rem\]{
   max-width: 7rem;
 }
@@ -803,6 +899,25 @@ video {
 
 .max-w-xs{
   max-width: 20rem;
+}
+
+.rotate-180{
+  --tw-rotate: 180deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-0{
+  --tw-rotate: 0deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.rotate-90{
+  --tw-rotate: 90deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
 .flex-col{
@@ -967,6 +1082,26 @@ video {
   background-color: rgb(156 118 46 / var(--tw-bg-opacity));
 }
 
+.bg-slate-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(100 116 139 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dd9866\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(221 152 102 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#dfb49a\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(223 180 154 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#e9c8b4\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(233 200 180 / var(--tw-bg-opacity));
+}
+
 .bg-\[url\(\'top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427\.jpg\'\)\]{
   background-image: url('top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427.jpg');
 }
@@ -1088,6 +1223,21 @@ video {
   color: rgb(202 138 4 / var(--tw-text-opacity));
 }
 
+.text-red-500{
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
+
+.text-red-700{
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity));
+}
+
+.text-amber-950{
+  --tw-text-opacity: 1;
+  color: rgb(69 26 3 / var(--tw-text-opacity));
+}
+
 .hover\:cursor-pointer:hover{
   cursor: pointer;
 }
@@ -1125,6 +1275,26 @@ video {
 .hover\:bg-indigo-600:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(79 70 229 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-orange-600:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(234 88 12 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-orange-800:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(154 52 18 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-orange-900:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(124 45 18 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-\[\#dfb49a\]:hover{
+  --tw-bg-opacity: 1;
+  background-color: rgb(223 180 154 / var(--tw-bg-opacity));
 }
 
 .hover\:text-black:hover{
