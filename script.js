@@ -1,17 +1,16 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const decrementButton = document.getElementById("decrement-button");
-  const incrementButton = document.getElementById("increment-button");
-  const quantityInput = document.getElementById("quantity-input");
+var counterEl = document.getElementById("counter");
+var decrementBtn = document.getElementById("decrement-btn");
+var incrementBtn = document.getElementById("increment-btn");
+let count = 1;
 
-  decrementButton.addEventListener("click", function () {
-    let currentValue = parseInt(quantityInput.value) || 0;
-    if (currentValue > 0) {
-      quantityInput.value = currentValue - 1;
-    }
-  });
+decrementBtn.addEventListener("click", () => {
+  if (count > 1) {
+    count--;
+    counterEl.textContent = count;
+  }
+});
 
-  incrementButton.addEventListener("click", function () {
-    let currentValue = parseInt(quantityInput.value) || 0;
-    quantityInput.value = currentValue + 1;
-  });
+incrementBtn.addEventListener("click", () => {
+  count++;
+  counterEl.textContent = count;
 });
