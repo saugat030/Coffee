@@ -5,6 +5,7 @@ module.exports = {
     fontFamily: {
       Anton: ["Anton", "sans-serif"],
       Poppins: ["Poppins", "sans-serif"],
+      Edu: ["Edu AU VIC WA NT Hand", "cursive"],
     },
     extend: {},
   },
