@@ -5,6 +5,10 @@ var decrementBtn = document.getElementById("decrement-btn");
 var incrementBtn = document.getElementById("increment-btn");
 var drop = document.getElementById("drop");
 var rot = document.getElementById("rot"); //rotate garanuna dropdown icon lai
+var pop = document.getElementById("pop");
+var popup = document.getElementById("popup");
+var mask = document.getElementById("mask");
+var close = document.getElementById("close");
 let count = 1;
 
 decrementBtn.addEventListener("click", () => {
@@ -36,3 +40,11 @@ function dropdown() {
   drop.classList.toggle("hidden");
   rot.classList.toggle("rotate-180");
 }
+pop.addEventListener("click", function () {
+  popup.classList.remove("hidden");
+  mask.classList.remove("hidden");
+});
+close.addEventListener("click", function () {
+  popup.classList.add("hidden");
+  mask.classList.add("hidden");
+});

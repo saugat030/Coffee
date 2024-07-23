@@ -5,14 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link
       href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
       rel="stylesheet"
     />
   </head>
   <body
-    class="relative w-screen bg-[url('top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427.jpg')] bg-cover bg-no-repeat overflow-x-hidden font-Edu"
+    class="relative z-10 w-screen bg-[url('top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427.jpg')] bg-cover bg-no-repeat overflow-x-hidden font-Edu"
   >
+    <div
+      id="mask"
+      class="hidden absolute h-full w-full blur-xl bg-black opacity-50 z-20"
+    ></div>
     <header class="container mx-auto sticky w-full">
       <nav class="h-20 bg-transparent flex items-center justify-between">
         <div class="flex">
@@ -41,400 +46,421 @@
         </ul>
       </nav>
     </header>
+
     <!-- navbar end here -->
+
     <div class="flex flex-col gap-4 container bg-transparent mx-auto mt-10">
-      <!--  this is just the main container whose flex is col -->
-      <button
-        onclick="dropdown()"
-        class="relative font-Poppins w-28 text-xl font-medium text-white bg-[#6F4E37] border-2 border-gray-400 p-2 my-1 rounded-2xl hover:bg-[#CD7F32] hover:text-white"
-      >
-        Drinks<i id="rot" class="rotate-180 ri-arrow-down-wide-line ml-2"></i>
+      <div class="relative h-screen w-screen bg-transparent overflow-hidden">
+        <!--  this is just the main container whose flex is col -->
+        <button
+          onclick="dropdown()"
+          class="relative font-Poppins w-28 text-xl font-medium text-white bg-[#6F4E37] border-2 border-gray-400 p-2 my-1 rounded-2xl hover:bg-[#CD7F32] hover:text-white"
+        >
+          Drinks<i id="rot" class="rotate-180 ri-arrow-down-wide-line ml-2"></i>
+          <div
+            id="drop"
+            class="hidden absolute top-12 mr-3 font-Poppins w-32 text-xl font-medium text-amber-950 bg-[#e9c8b4] border border-amber-900 p-2 my-1 rounded-2xl"
+          >
+            <ul class="nth">
+              <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Drinks</li>
+              <hr />
+              <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Foods</li>
+              <hr />
+              <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Bevrages</li>
+            </ul>
+          </div>
+        </button>
+
+        <!-- different products seperator -->
         <div
-          id="drop"
-          class="hidden absolute top-10 mr-3 font-Poppins w-32 text-xl font-medium text-amber-950 bg-[#e9c8b4] border border-amber-900 p-2 my-1 rounded-2xl"
+          class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
         >
-          <ul class="nth">
-            <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Drinks</li>
-            <hr />
-            <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Foods</li>
-            <hr />
-            <li class="hover:bg-[#dfb49a] rounded-md m-1 p-1">Bevrages</li>
-          </ul>
-        </div>
-      </button>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-4 items-start ms-3 w-36">
+              <!-- yo div chai tyo sano img ra Name ko lai matrai -->
+              <img
+                class="w-32 rounded-lg"
+                src="https://www.fertilityfamily.co.uk/wp-content/uploads/2023/10/PCOS-and-coffee-scaled-1.jpg"
+              />
+              <h1 class="font-bold text-xl text-red-950 w-32">Caffè latte</h1>
+            </div>
+            <div>
+              <div class="ml-3 text-xl text-yellow-600 mb-4">
+                <i class="ri-star-fill mr-2"></i>4.5
+              </div>
+              <div class="ml-5 text-2xl text-black">
+                <h1>$21</h1>
+              </div>
+            </div>
+          </div>
+          <!-- counter ko code -->
+          <div class="flex flex-col h-20 gap-4 items-center justify-center">
+            <h1 id="choose" class="text-sm font-medium">Choose a quantiy</h1>
+            <div class="flex items-center justify-center">
+              <button
+                id="decrement-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-orange-900"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+              <span id="counter" class="text-xl font-semibold mx-4">1</span>
+              <button
+                id="increment-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-orange-900"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v12M6 12h12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- counter button ends here -->
 
-      <!-- different products seperator -->
-      <div
-        class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col gap-4 items-start ms-3 w-36">
-            <!-- yo div chai tyo sano img ra Name ko lai matrai -->
-            <img
-              class="w-32 rounded-lg"
-              src="https://www.fertilityfamily.co.uk/wp-content/uploads/2023/10/PCOS-and-coffee-scaled-1.jpg"
-            />
-            <h1 class="font-bold text-xl text-red-950 w-32">Caffè latte</h1>
-          </div>
-          <div>
-            <div class="ml-3 text-xl text-yellow-600 mb-4">
-              <i class="ri-star-fill mr-2"></i>4.5
-            </div>
-            <div class="ml-5 text-2xl text-black">
-              <h1>$21</h1>
-            </div>
-          </div>
+          <button
+            id="pop"
+            class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          >
+            Buy Now
+          </button>
         </div>
-        <!-- counter ko code -->
-        <div class="flex flex-col h-20 gap-4 items-center justify-center">
-          <h1 id="choose" class="text-sm font-medium">Choose a quantiy</h1>
-          <div class="flex items-center justify-center">
-            <button
-              id="decrement-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-orange-900"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 12H4"
-                ></path>
-              </svg>
-            </button>
-            <span id="counter" class="text-xl font-semibold mx-4">1</span>
-            <button
-              id="increment-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-orange-900"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6v12M6 12h12"
-                ></path>
-              </svg>
-            </button>
+        <!-- different products seperator -->
+        <div
+          class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
+        >
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-4 items-start ms-3 w-36">
+              <!-- yo div chai tyo sano img ra button ko lai matrai -->
+              <img
+                class="w-32 rounded-lg"
+                src="https://www.helenacoffee.vn/wp-content/uploads/2022/07/Best-Black-Coffee-To-Drink-1.jpg"
+              />
+              <h1 class="font-bold text-xl text-red-950 w-32">Americano</h1>
+            </div>
+            <div>
+              <div class="ml-3 text-xl text-yellow-600 mb-4">
+                <i class="ri-star-fill mr-2"></i>4.5
+              </div>
+              <div class="ml-5 text-2xl text-black">
+                <h1>$10</h1>
+              </div>
+            </div>
           </div>
+          <!-- counter ko code -->
+          <div class="flex flex-col h-20 gap-4 items-center justify-center">
+            <h1 class="text-sm font-medium">Choose a quantiy</h1>
+            <div class="flex items-center justify-center">
+              <button
+                id="decrement-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+              <span id="counter" class="text-xl font-semibold mx-4">1</span>
+              <button
+                id="increment-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v12M6 12h12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- counter button ends here -->
+          <button
+            class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          >
+            Buy Now
+          </button>
         </div>
-        <!-- counter button ends here -->
+        <!-- different products seperator -->
+        <div
+          class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
+        >
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-4 items-start ms-3 w-36">
+              <!-- yo div chai tyo sano img ra button ko lai matrai -->
+              <img
+                class="w-32 h-24 rounded-lg"
+                src="https://recettes.vedrenne.fr/1269-medium_default/gingerbread-cappuccino.jpg"
+              />
+              <h1 class="font-bold text-xl text-red-950 w-32">Cappuccino</h1>
+            </div>
+            <div>
+              <div class="ml-3 text-xl text-yellow-600 mb-4">
+                <i class="ri-star-fill mr-2"></i>4.5
+              </div>
+              <div class="ml-5 text-2xl text-black">
+                <h1>$30</h1>
+              </div>
+            </div>
+          </div>
+          <!-- counter ko code -->
+          <div class="flex flex-col h-20 gap-4 items-center justify-center">
+            <h1 class="text-sm font-medium">Choose a quantiy</h1>
+            <div class="flex items-center justify-center">
+              <button
+                id="decrement-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+              <span id="counter" class="text-xl font-semibold mx-4">1</span>
+              <button
+                id="increment-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
+              >
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v12M6 12h12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- counter button ends here -->
 
-        <button
-          class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          <button
+            class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          >
+            Buy Now
+          </button>
+        </div>
+        <!-- different products seperator -->
+        <div
+          class="w-[50%] p-2 mb-2 border border-amber-900 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
         >
-          Buy Now
-        </button>
-      </div>
-      <!-- different products seperator -->
-      <div
-        class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col gap-4 items-start ms-3 w-36">
-            <!-- yo div chai tyo sano img ra button ko lai matrai -->
-            <img
-              class="w-32 rounded-lg"
-              src="https://www.helenacoffee.vn/wp-content/uploads/2022/07/Best-Black-Coffee-To-Drink-1.jpg"
-            />
-            <h1 class="font-bold text-xl text-red-950 w-32">Americano</h1>
-          </div>
-          <div>
-            <div class="ml-3 text-xl text-yellow-600 mb-4">
-              <i class="ri-star-fill mr-2"></i>4.5
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-4 items-start ms-3 w-36">
+              <!-- yo div chai tyo sano img ra button ko lai matrai -->
+              <img
+                class="w-32 rounded-lg"
+                src="https://cdn.shopify.com/s/files/1/0838/4525/files/what_is_long_black_coffee_1024x1024.jpg?v=1648542549"
+              />
+              <h1 class="font-bold text-xl text-red-950 w-32">Espresso</h1>
             </div>
-            <div class="ml-5 text-2xl text-black">
-              <h1>$10</h1>
+            <div>
+              <div class="ml-3 text-xl text-yellow-600 mb-4">
+                <i class="ri-star-fill mr-2"></i>4.5
+              </div>
+              <div class="ml-5 text-2xl text-black">
+                <h1>$8</h1>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- counter ko code -->
-        <div class="flex flex-col h-20 gap-4 items-center justify-center">
-          <h1 class="text-sm font-medium">Choose a quantiy</h1>
-          <div class="flex items-center justify-center">
-            <button
-              id="decrement-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+          <!-- counter ko code -->
+          <div class="flex flex-col h-20 gap-4 items-center justify-center">
+            <h1 class="text-sm font-medium">Choose a quantiy</h1>
+            <div class="flex items-center justify-center">
+              <button
+                id="decrement-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 12H4"
-                ></path>
-              </svg>
-            </button>
-            <span id="counter" class="text-xl font-semibold mx-4">1</span>
-            <button
-              id="increment-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+              <span id="counter" class="text-xl font-semibold mx-4">1</span>
+              <button
+                id="increment-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6v12M6 12h12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <!-- counter button ends here -->
-        <button
-          class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
-        >
-          Buy Now
-        </button>
-      </div>
-      <!-- different products seperator -->
-      <div
-        class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col gap-4 items-start ms-3 w-36">
-            <!-- yo div chai tyo sano img ra button ko lai matrai -->
-            <img
-              class="w-32 h-24 rounded-lg"
-              src="https://recettes.vedrenne.fr/1269-medium_default/gingerbread-cappuccino.jpg"
-            />
-            <h1 class="font-bold text-xl text-red-950 w-32">Cappuccino</h1>
-          </div>
-          <div>
-            <div class="ml-3 text-xl text-yellow-600 mb-4">
-              <i class="ri-star-fill mr-2"></i>4.5
-            </div>
-            <div class="ml-5 text-2xl text-black">
-              <h1>$30</h1>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v12M6 12h12"
+                  ></path>
+                </svg>
+              </button>
             </div>
           </div>
-        </div>
-        <!-- counter ko code -->
-        <div class="flex flex-col h-20 gap-4 items-center justify-center">
-          <h1 class="text-sm font-medium">Choose a quantiy</h1>
-          <div class="flex items-center justify-center">
-            <button
-              id="decrement-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 12H4"
-                ></path>
-              </svg>
-            </button>
-            <span id="counter" class="text-xl font-semibold mx-4">1</span>
-            <button
-              id="increment-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6v12M6 12h12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <!-- counter button ends here -->
+          <!-- counter button ends here -->
 
-        <button
-          class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          <button
+            class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          >
+            Buy Now
+          </button>
+        </div>
+        <!-- different products seperator -->
+        <div
+          class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
         >
-          Buy Now
-        </button>
-      </div>
-      <!-- different products seperator -->
-      <div
-        class="w-[50%] p-2 mb-2 border border-amber-900 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col gap-4 items-start ms-3 w-36">
-            <!-- yo div chai tyo sano img ra button ko lai matrai -->
-            <img
-              class="w-32 rounded-lg"
-              src="https://cdn.shopify.com/s/files/1/0838/4525/files/what_is_long_black_coffee_1024x1024.jpg?v=1648542549"
-            />
-            <h1 class="font-bold text-xl text-red-950 w-32">Espresso</h1>
-          </div>
-          <div>
-            <div class="ml-3 text-xl text-yellow-600 mb-4">
-              <i class="ri-star-fill mr-2"></i>4.5
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-4 items-start ms-3 w-36">
+              <!-- yo div chai tyo sano img ra button ko lai matrai -->
+              <img
+                class="w-32 h-24 rounded-lg"
+                src="https://www.eatingwell.com/thmb/qtP5zJfjZjS_6lkAGjOoH2XDNEc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mineral-water-8cc11cec12c7471bac9378fa9757c83f.jpg"
+              />
+              <h1 class="font-bold text-xl text-red-950 w-32">Water</h1>
             </div>
-            <div class="ml-5 text-2xl text-black">
-              <h1>$8</h1>
+            <div>
+              <div class="ml-3 text-xl text-yellow-600 mb-4">
+                <i class="ri-star-fill mr-2"></i>4.5
+              </div>
+              <div class="ml-5 text-2xl text-black">
+                <h1>$21</h1>
+              </div>
             </div>
           </div>
-        </div>
-        <!-- counter ko code -->
-        <div class="flex flex-col h-20 gap-4 items-center justify-center">
-          <h1 class="text-sm font-medium">Choose a quantiy</h1>
-          <div class="flex items-center justify-center">
-            <button
-              id="decrement-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+          <div class="flex flex-col h-20 gap-4 items-center justify-center">
+            <h1 class="text-sm font-medium">Choose a quantiy</h1>
+            <div class="flex items-center justify-center">
+              <button
+                id="decrement-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 12H4"
-                ></path>
-              </svg>
-            </button>
-            <span id="counter" class="text-xl font-semibold mx-4">1</span>
-            <button
-              id="increment-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M20 12H4"
+                  ></path>
+                </svg>
+              </button>
+              <span id="counter" class="text-xl font-semibold mx-4">1</span>
+              <button
+                id="increment-btn"
+                class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
               >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6v12M6 12h12"
-                ></path>
-              </svg>
-            </button>
+                <svg
+                  class="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M12 6v12M6 12h12"
+                  ></path>
+                </svg>
+              </button>
+            </div>
           </div>
-        </div>
-        <!-- counter button ends here -->
+          <!-- counter button ends here -->
 
-        <button
-          class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          <button
+            class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
+          >
+            Buy Now
+          </button>
+        </div>
+        <div
+          id="popup"
+          class="hidden transform fixed top-2 border-2 border-amber-900 right-[50%] translate-x-[50%] translate-y-[50%] z-20 h-[60%] w-[50%] bg-[#edd6c8] rounded-3xl p-4"
         >
-          Buy Now
-        </button>
-      </div>
-      <!-- different products seperator -->
-      <div
-        class="w-[50%] border border-amber-900 p-2 mb-2 h-44 bg-[#edd6c8] flex justify-between items-center rounded-2xl"
-      >
-        <div class="flex items-center gap-3">
-          <div class="flex flex-col gap-4 items-start ms-3 w-36">
-            <!-- yo div chai tyo sano img ra button ko lai matrai -->
-            <img
-              class="w-32 h-24 rounded-lg"
-              src="https://www.eatingwell.com/thmb/qtP5zJfjZjS_6lkAGjOoH2XDNEc=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/mineral-water-8cc11cec12c7471bac9378fa9757c83f.jpg"
-            />
-            <h1 class="font-bold text-xl text-red-950 w-32">Water</h1>
+          <div class="w-full flex justify-between">
+            <div><!-- Empty Div --></div>
+            <h1 class="font-bold text-3xl text-amber-950">@Name</h1>
+            <i
+              id="close"
+              class="font-bold cursor-pointer rounded-md hover:bg-amber-900 hover:text-white text-3xl ri-close-line"
+            ></i>
           </div>
-          <div>
-            <div class="ml-3 text-xl text-yellow-600 mb-4">
-              <i class="ri-star-fill mr-2"></i>4.5
-            </div>
-            <div class="ml-5 text-2xl text-black">
-              <h1>$21</h1>
-            </div>
+          <div class="h-full w-full flex items-center justify-between">
+            <img src="" alt="" />
           </div>
         </div>
-        <div class="flex flex-col h-20 gap-4 items-center justify-center">
-          <h1 class="text-sm font-medium">Choose a quantiy</h1>
-          <div class="flex items-center justify-center">
-            <button
-              id="decrement-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M20 12H4"
-                ></path>
-              </svg>
-            </button>
-            <span id="counter" class="text-xl font-semibold mx-4">1</span>
-            <button
-              id="increment-btn"
-              class="flex justify-center items-center w-6 h-6 rounded-full text-white focus:outline-none bg-[#9c762e] hover:bg-indigo-600"
-            >
-              <svg
-                class="w-4 h-4"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 6v12M6 12h12"
-                ></path>
-              </svg>
-            </button>
-          </div>
-        </div>
-        <!-- counter button ends here -->
-
-        <button
-          class="font-Poppins font-bold rounded-lg hover:bg-amber-900 hover:text-white text-amber-900 border-2 border-amber-900 p-2 me-3 w-28"
-        >
-          Buy Now
-        </button>
       </div>
     </div>
     <script src="script.js"></script>
