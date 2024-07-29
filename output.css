@@ -1046,6 +1046,15 @@ video {
   background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
+.bg-gray-950{
+  --tw-bg-opacity: 1;
+  background-color: rgb(3 7 18 / var(--tw-bg-opacity));
+}
+
+.bg-opacity-75{
+  --tw-bg-opacity: 0.75;
+}
+
 .bg-\[url\(\'top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427\.jpg\'\)\]{
   background-image: url('top-view-coffee-concept-with-copy-space_23-2148464902-fotor-2024072217427.jpg');
 }
