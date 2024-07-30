@@ -27,20 +27,20 @@
               class="w-20 inline"
               src="https://static.vecteezy.com/system/resources/previews/027/927/578/original/coffee-logo-ai-generative-free-png.png"
             />
-            <h1 class="inline">KumCoffee</h1>
+            <h1 class="inline font-Edu">KumCoffee</h1>
           </div>
           <ul class="flex gap-3 p-2 text-xl">
             <li class="ml-4 text-[#FF902B]">About Us</li>
             <li class="ml-4">Our Product</li>
             <li class="ml-4">Delivery</li>
           </ul>
-          <div class="text-2xl">
+          <div id="search_cart">
             <input
               type="text"
-              class="p-2 rounded-2xl w-72 placeholder:text-xl border-2 border-black"
+              class="p-2 rounded-2xl w-72 placeholder:text-lg shadow-2xl shadow-slate-800 text-xl mr-2"
               placeholder="Espresso"
             />
-            <i class="ri-shopping-cart-line"></i>
+            <i class="ri-shopping-cart-line text-4xl ml-2"></i>
           </div>
         </nav>
       </header>
@@ -67,11 +67,15 @@
         </div>
       </div>
     </div>
-    <div class="flex flex-col gap-4 container mx-auto p-4">
+    <!--The 'Popular Now' section begins-->
+    <div
+      class="flex flex-col gap-8 container justify-between mx-auto p-4 mb-12"
+    >
       <h1 class="text-4xl font-bold">Popular Now</h1>
-      <div class="flex justify-between items-center">
+      <div class="flex justify-around items-center">
+        <!--Different Product Seperator-->
         <div
-          class="w-[25%] flex flex-col items-center bg-white h-80 p-5 rounded-xl gap-4"
+          class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
         >
           <div class="w-full">
             <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
@@ -80,35 +84,98 @@
             <h1 class="text-xl font-bold">Vanilla Latte</h1>
             <h1 class="text-xl font-bold">21K</h1>
           </div>
+          <div class="flex justify-between items-center w-full">
+            <h1 class="text-lg text-[#FF902B] font-medium flex gap-3">
+              <button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Hot</button
+              ><button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Cold
+              </button>
+            </h1>
+            <div class="text-2xl text-[#FF902B]">
+              <i class="ri-shopping-cart-fill"></i>
+            </div>
+          </div>
         </div>
+        <!--Different Product Seperator-->
         <div
-        class="w-[25%] flex flex-col items-center bg-white h-80 p-5 rounded-xl gap-4"
-      >
-        <div class="w-full">
-          <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+          class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
+        >
+          <div class="w-full">
+            <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <h1 class="text-xl font-bold">Vanilla Latte</h1>
+            <h1 class="text-xl font-bold">21K</h1>
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <h1 class="text-lg text-[#FF902B] font-medium flex gap-3">
+              <button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Hot</button
+              ><button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Cold
+              </button>
+            </h1>
+            <div class="text-2xl text-[#FF902B]">
+              <i class="ri-shopping-cart-fill"></i>
+            </div>
+          </div>
         </div>
-        <div class="flex justify-between items-center w-full">
-          <h1 class="text-xl font-bold">Vanilla Latte</h1>
-          <h1 class="text-xl font-bold">21K</h1>
+        <!--Different Product Seperator-->
+        <div
+          class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
+        >
+          <div class="w-full">
+            <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <h1 class="text-xl font-bold">Vanilla Latte</h1>
+            <h1 class="text-xl font-bold">21K</h1>
+          </div>
+          <div class="flex justify-between items-center w-full">
+            <h1 class="text-lg text-[#FF902B] font-medium flex gap-3">
+              <button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Hot</button
+              ><button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                Cold
+              </button>
+            </h1>
+            <div class="text-2xl text-[#FF902B]">
+              <i class="ri-shopping-cart-fill"></i>
+            </div>
+          </div>
         </div>
+        <!--Different Product Seperator ENDS!!!-->
       </div>
-      <div
-      class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
-    >
-      <div class="w-full">
-        <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+    </div>
+    <!--The Services section-->
+    <div class="flex flex-col justify-between gap-14 bg-white p-14">
+      <div class="container mx-auto h-full">
+        <h1 class="text-4xl font-bold mb-5">How our services work</h1>
       </div>
-      <div class="flex justify-between items-center w-full">
-        <h1 class="text-xl font-bold">Vanilla Latte</h1>
-        <h1 class="text-xl font-bold">21K</h1>
-      </div>
-      <div class="flex justify-between items-center w-full">
-        <h1 class="text-xl font-bold">Vanilla Latte</h1>
-        <h1 class="text-xl font-bold">21K</h1>
-      </div>
+      <div class="container mx-auto flex justify-around items-center mt-5">
+        <!--Diffferent Service seperator-->
+        <div class="flex flex-col items-center gap-5">
+          <img src="20+ coffee.png" alt="ICON" />
+          <h1 class="text-xl font-medium">Choose your coffee</h1>
+          <h2 class="text-sm text-slate-700">There are 20+ coffee for you</h2>
         </div>
+        <!--Diffferent Service seperator-->
+        <div class="flex flex-col items-center gap-5">
+          <img src="food-truck.png" alt="ICON" />
+          <h1 class="text-xl font-medium">We deliver it to you</h1>
+          <h2 class="text-sm text-slate-700">Choose your delivery location</h2>
+        </div>
+        <!--Diffferent Service seperator-->
+        <div class="flex flex-col items-center gap-5">
+          <img src="20+ coffee.png" alt="ICON" />
+          <h1 class="text-xl font-medium">Enjoy your coffee</h1>
+          <h2 class="text-sm text-slate-700">
+            Warm coffee served at your doorsteps
+          </h2>
         </div>
       </div>
     </div>
+    <!--End of Services section-->
   </body>
 </html>
