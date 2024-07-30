@@ -29,7 +29,7 @@
             />
             <h1 class="inline font-Edu">KumCoffee</h1>
           </div>
-          <ul class="flex gap-3 p-2 text-xl">
+          <ul class="flex-1 flex gap-3 p-2 text-xl justify-center">
             <li class="ml-4 text-[#FF902B]">About Us</li>
             <li class="ml-4">Our Product</li>
             <li class="ml-4">Delivery</li>
@@ -56,10 +56,16 @@
             in the morning
           </h2>
           <div class="flex gap-1 mt-3">
-            <button class="mr-2 w-32 bg-[#2f2105] text-white p-2 rounded-3xl">
+            <button
+              class="mr-2 w-32 bg-[#2f2105] text-white p-2 border border-[#2f2105] rounded-3xl hover:bg-transparent hover:text-[#2f2105] hover:scale-110 transition ease-in-out duration-500"
+            >
               Order Now
             </button>
-            <button class="w-32 text-[#FF902B] p-2 rounded-3xl">More</button>
+            <button
+              class="w-32 text-[#FF902B] p-2 rounded-3xl hover:bg-[#2f2105] hover:text-white transform hover:border-white ease-in-out duration-1000"
+            >
+              More
+            </button>
           </div>
         </div>
         <div>
@@ -77,8 +83,29 @@
         <div
           class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
         >
-          <div class="w-full">
+          <div class="w-full relative overflow-hidden group">
             <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+            <!--Tyo description wala div (absolute)-->
+            <div
+              class="absolute p-2 top-full transition-all ease-in-out duration-1000 group-hover:top-0 bg-white opacity-80 h-full w-full rounded-lg"
+            >
+              <h1
+                class="font-bold text-amber-900 text-xl opacity-100 text-center"
+              >
+                Cappuccino
+              </h1>
+              <p class="text-sm font-bold opacity-100 m-2 rounded-2xl">
+                Espresso (ess-PRESS-oh) is a full-flavored, concentrated form of
+                coffee that is served in “shots.” It is made by forcing
+                pressurized hot water through very finely ground coffee beans
+                using an espresso machine. The result is a liquid stronger than
+                coffee topped with a “crema,” a brown foam that forms when air
+                bubbles combine with the soluble oils of fine-ground coffee and
+                sits on top of a properly pulled shot of espresso. The crema
+                adds to the rich flavor and lingering aftertaste of espresso.
+              </p>
+            </div>
+            <!--Tyo description wala div (absolute) ENDS!!-->
           </div>
           <div class="flex justify-between items-center w-full">
             <h1 class="text-xl font-bold">Vanilla Latte</h1>
@@ -177,5 +204,7 @@
       </div>
     </div>
     <!--End of Services section-->
+    <!--Start of About us section-->
+    <div class="bg-inherit">About Us</div>
   </body>
 </html>
