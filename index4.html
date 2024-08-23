@@ -176,7 +176,7 @@
       </div>
     </div>
     <!--The Services section-->
-    <div class="flex flex-col justify-between gap-14 bg-white p-14">
+    <div class="flex flex-col justify-between gap-14 bg-white p-14 mb-16">
       <div class="container mx-auto h-full">
         <h1 class="text-4xl font-bold mb-5">How our services work</h1>
       </div>
@@ -205,6 +205,106 @@
     </div>
     <!--End of Services section-->
     <!--Start of About us section-->
-    <div class="bg-inherit">About Us</div>
+    <div
+      class="bg-[url('./Aboutusbg.png')] h-96 p-14 bg-repeat-x flex container mx-auto items-center justify-evenly mt-16"
+    >
+      <figure
+        class="border-2 border-gray-500 rounded-xl shadow-xl shadow-slate-500"
+      >
+        <img src="./unsplash_3n3mPoGko8g.png" alt="IMAGE" class="" />
+      </figure>
+      <!-- AboutUS -->
+      <section class="p-2 w-1/2 flex flex-col">
+        <h1 class="text-black text-3xl m-2 font-bold">About us</h1>
+        <h2 class="text-black text-xl m-2 font-semibold">
+          We provide quality coffee, and ready to deliver.
+        </h2>
+        <p class="text-[#D9D9D9] font-medium m-2">
+          We are a company that makes and distributes delicious drinks. our main
+          product is made with a secret recipe and available in stores
+          worldwide.
+        </p>
+        <button class="bg-[#2F2105] w-1/4 p-2 rounded-3xl text-[#F4AE26] m-2">
+          Get your Coffee
+        </button>
+      </section>
+      <!-- END AboutUS -->
+    </div>
+    <!-- Special Menu -->
+    <div class="bg-white mt-28 p-20">
+      <div class="container mx-auto flex flex-col">
+        <h1 class="text-3xl font-bold text-black m-2">Special Menu for you</h1>
+        <!-- Products Cards Section-->
+        <div
+          class="flex flex-wrap w-full p-3 gap-2 justify-evenly items-center"
+        >
+          <!-- Call products Here through props -->
+          <div
+            class="w-[25%] flex flex-col items-center bg-white h-96 p-5 rounded-xl gap-4"
+          >
+            <div class="w-full relative overflow-hidden group">
+              <img src="vanillaLatte.png" class="w-full" alt="Vanilla Latte" />
+              <!--Tyo description wala div (absolute)-->
+              <div
+                class="absolute p-2 top-full transition-all ease-in-out duration-1000 group-hover:top-0 bg-white opacity-80 h-full w-full rounded-lg"
+              >
+                <h1
+                  class="font-bold text-amber-900 text-xl opacity-100 text-center"
+                >
+                  Cappuccino
+                </h1>
+                <p class="text-sm font-bold opacity-100 m-2 rounded-2xl">
+                  Espresso (ess-PRESS-oh) is a full-flavored, concentrated form
+                  of coffee that is served in “shots.” It is made by forcing
+                  pressurized hot water through very finely ground coffee beans
+                  using an espresso machine. The result is a liquid stronger
+                  than coffee topped with a “crema,” a brown foam that forms
+                  when air bubbles combine with the soluble oils of fine-ground
+                  coffee and sits on top of a properly pulled shot of espresso.
+                  The crema adds to the rich flavor and lingering aftertaste of
+                  espresso.
+                </p>
+              </div>
+              <!--Tyo description wala div (absolute) ENDS!!-->
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <h1 class="text-xl font-bold">Vanilla Latte</h1>
+              <h1 class="text-xl font-bold">21K</h1>
+            </div>
+            <div class="flex justify-between items-center w-full">
+              <h1 class="text-lg text-[#FF902B] font-medium flex gap-3">
+                <button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                  Hot</button
+                ><button class="p-1 border border-[#FF902B] w-24 rounded-xl">
+                  Cold
+                </button>
+              </h1>
+              <div class="text-2xl text-[#FF902B]">
+                <i class="ri-shopping-cart-fill"></i>
+              </div>
+            </div>
+          </div>
+
+          <!-- Different PRoduct -->
+          <section class="flex flex-col w-1/4 bg-slate-600">
+            <!-- Call products Here through props -->
+            Products
+          </section>
+          <section class="flex flex-col w-1/4 bg-slate-600">
+            <!-- Call products Here through props -->
+            Products
+          </section>
+          <section class="flex flex-col w-1/4 bg-slate-600">
+            <!-- Call products Here through props -->
+            Products
+          </section>
+          <section class="flex flex-col w-1/4 bg-slate-600">
+            <!-- Call products Here through props -->
+            Products
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- Special Menu -->
   </body>
 </html>
